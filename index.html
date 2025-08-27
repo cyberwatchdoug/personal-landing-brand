@@ -3,18 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#181a1b">
+  <meta name="description" content="CyberWatchDoug - InfoSec Professional, cybersecurity strategist, and content creator.">
   <title>CyberWatchDoug - InfoSec Professional</title>
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
   <!-- Bootstrap Icons -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <style>
     body {
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background: #f8f9fa;
+    }
+    body.dark-mode {
+      background: #181a1b;
+      color: #f8f9fa;
+    }
+    body:not(.dark-mode) {
+      background: #f8f9fa;
+      color: #212529;
     }
     .social-icons a {
       font-size: 2.5rem;
@@ -31,42 +40,90 @@
     body.dark-mode .social-icons a:hover {
       color: #0d6efd;
     }
+    .profile-card {
+      background: #fff;
+      border: 2px solid #000;
+      transition: background 0.3s, border 0.3s, box-shadow 0.3s, color 0.3s;
+    }
+    .divider {
+      background: #e9ecef;
+    }
+    body.dark-mode .profile-card {
+      background: #181a1b !important;
+      border: none !important;
+      box-shadow: 0 0 0 4px #fff, 0 0.5rem 1rem rgba(0,0,0,.15); /* white glow in dark mode */
+    }
+    body.dark-mode .profile-card .divider {
+      background: #444 !important;
+    }
+    body:not(.dark-mode) .profile-card .divider {
+      background: #000 !important;
+    }
   </style>
 </head>
 <body>
   <!-- Navbar -->
+  <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
     <div class="container-fluid">
       <span class="navbar-brand mb-0 h1">CYBERWATCHDOUG</span>
       <div class="form-check form-switch ms-auto">
-        <input class="form-check-input" type="checkbox" id="darkModeSwitch" aria-label="Toggle dark mode">
+        <input class="form-check-input" type="checkbox" id="darkModeSwitch" aria-label="Toggle dark mode" title="Toggle dark mode">
         <label class="form-check-label" for="darkModeSwitch">
           <i class="bi bi-moon" id="darkModeIcon"></i>
         </label>
       </div>
     </div>
   </nav>
+  </header>
 
-  <main class="text-center" style="margin-top: 80px;">
-    <h1 class="mb-4">Connect with Me</h1>
-    <div class="social-icons d-flex justify-content-center">
-      <a href="https://www.youtube.com/@cyberwatchdoug" target="_blank" aria-label="YouTube">
-        <i class="bi bi-youtube"></i>
-      </a>
-      <a href="https://github.com/cyberwatchdoug" target="_blank" aria-label="GitHub">
-        <i class="bi bi-github"></i>
-      </a>
-      <a href="https://bsky.app/profile/cyberwatchdoug.com" target="_blank" aria-label="Bluesky">
-        <i class="bi bi-bluesky"></i>
-      </a>
-      <!-- <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter">
-        <i class="bi bi-twitter"></i>
-      </a> -->
-      <a href="https://linkedin.com/in/cyberwatchdoug" target="_blank" aria-label="LinkedIn">
-        <i class="bi bi-linkedin"></i>
-      </a>
-    </div>
-  </main>
+  <!-- Centered Content Wrapper -->
+  <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: calc(100vh - 56px); margin-top: 56px;">
+    <!-- Profile Section -->
+    <section class="container mb-4">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10">
+          <div class="profile-card shadow rounded-4 p-3 d-flex flex-column flex-md-row align-items-center" style="position: relative;">
+            <div class="d-flex flex-column align-items-center justify-content-center" style="min-width:150px;">
+              <img src="profile-picture.png" alt="CyberWatchDoug Profile Photo" class="rounded-circle img-fluid" style="width: 150px; height: 150px; object-fit: cover; object-position: center;">
+            </div>
+            <!-- Vertical divider for md+ screens, horizontal for small screens -->
+            <div class="d-none d-md-block divider" style="width:1px; height:120px; margin: 0 2rem;"></div>
+            <div class="d-block d-md-none w-100 divider" style="height:1px; margin: 1.5rem 0;"></div>
+            <div class="flex-grow-1 text-center text-md-start">
+              <p class="lead mb-2">
+                As a senior cybersecurity strategist and content creator, my mission is to make cybersecurity accessible and effective for both technical teams and business leaders.
+              </p>
+              <p class="lead mb-0">
+                I develop and share actionable guidance, frameworks, and thought leadership to drive measurable improvements in security and compliance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="text-center">
+      <h1 class="mb-4">Connect with Me</h1>
+      <div class="social-icons d-flex justify-content-center">
+        <a href="https://www.youtube.com/@cyberwatchdoug" target="_blank" aria-label="YouTube">
+          <i class="bi bi-youtube"></i>
+        </a>
+        <a href="https://github.com/cyberwatchdoug" target="_blank" aria-label="GitHub">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://bsky.app/profile/cyberwatchdoug.com" target="_blank" aria-label="Bluesky">
+          <i class="bi bi-bluesky"></i>
+        </a>
+        <a href="https://linkedin.com/in/cyberwatchdoug" target="_blank" aria-label="LinkedIn">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="https://blog.cyberwatchdoug.com" target="_blank" aria-label="Blog">
+          <i class="bi bi-journal-text"></i>
+        </a>
+      </div>
+    </main>
+  </div>
 
   <script>
     // Dark mode toggle logic
@@ -78,16 +135,12 @@
     function setDarkMode(enabled) {
       if (enabled) {
         body.classList.add('dark-mode');
-        body.style.background = '#181a1b';
-        body.style.color = '#f8f9fa';
         navbar.classList.remove('navbar-light', 'bg-light');
         navbar.classList.add('navbar-dark', 'bg-dark');
         icon.classList.remove('bi-moon');
         icon.classList.add('bi-brightness-high');
       } else {
         body.classList.remove('dark-mode');
-        body.style.background = '#f8f9fa';
-        body.style.color = '#212529';
         navbar.classList.remove('navbar-dark', 'bg-dark');
         navbar.classList.add('navbar-light', 'bg-light');
         icon.classList.remove('bi-brightness-high');
@@ -95,12 +148,18 @@
       }
     }
 
+        // Save preference
     switchInput.addEventListener('change', (e) => {
       setDarkMode(e.target.checked);
+      localStorage.setItem('darkMode', e.target.checked ? '1' : '0');
     });
-
-    // Optional: Remember mode
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    
+    // Load preference
+    const saved = localStorage.getItem('darkMode');
+    if (saved !== null) {
+      switchInput.checked = saved === '1';
+      setDarkMode(saved === '1');
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       switchInput.checked = true;
       setDarkMode(true);
     }
